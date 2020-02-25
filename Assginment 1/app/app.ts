@@ -9,7 +9,10 @@ function add()
     if (n!== undefined && a!== undefined && c!== undefined && s!== undefined&&sc!== undefined )
     {
         PostValue(n,a,c,s,sc);
+        update(n,sc);
     }
+    
+    
 
 }
 
@@ -76,7 +79,7 @@ function PostValue(name?:string,age?:number,clas?:number,sub?:string,sh?:string)
     'School '+sh)
 }
 
-const sch : school = new school();
+let sch : school = new school();
 
 document.getElementById('RNPS')!.addEventListener('click',ShowRnps);
 document.getElementById('ST')!.addEventListener('click',ShowST);
@@ -144,4 +147,29 @@ function ShowST():void
     }
     
     PElement!.innerText = `${z}`;
+}
+
+function update(name:string,school:string)
+{
+    if(school === 'RNPS')
+    {
+        sch.RNPS.push(name)
+    } 
+    else if(school === 'ST Thomas')
+    {
+        sch.ST.push(name)
+    }
+    else if(school === 'MCKV')
+    {
+        sch.MCKV.push(name)
+    }
+    else if(school === 'Don')
+    {
+        sch.Don.push(name)
+    }
+    else if(school === 'Sun')
+    {
+        sch.Sun.push(name)
+    }
+    
 }
