@@ -1,24 +1,29 @@
 import { school } from "./school"
 function add()
 {
-    let n: string = getname('name');
+    let n: string |undefined = getname('name');
     let a: number = getage('age');
     let c: number = getclass('clas');
     let s: string = getsub('sub');
     let sc: string = getsch('sch');
-    PostValue(n,a,c,s,sc);
+    if (n!== undefined && a!== undefined && c!== undefined && s!== undefined&&sc!== undefined )
+    {
+        PostValue(n,a,c,s,sc);
+    }
 
 }
 
 document.getElementById('Start')!.addEventListener('click',add);
 
-function getname(name: string): string{
+function getname(name: string|undefined): string|undefined{
 
     const inputElement: HTMLInputElement = <HTMLInputElement>document.getElementById('name');
-    // if (inputElement.value === '')
-    // {
-    //     return undefined;
-    // }
+
+     if (inputElement.value === '')
+     {
+        alert('Enter the name')
+         return undefined;
+     }
     // else{
     return inputElement.value;
     //}
@@ -26,9 +31,8 @@ function getname(name: string): string{
 function getage(age: string): number{
 
     const inputElement: HTMLInputElement = <HTMLInputElement>document.getElementById('age');
-    // if (inputElement.value === '')
-    // {
-    //     return undefined;
+    if (inputElement.value === '')
+        alert('Enter the Age')
     // }
     // else{
     return Number(inputElement.value);
@@ -36,9 +40,8 @@ function getage(age: string): number{
 }function getclass(clas: string): number{
 
      const inputElement: HTMLInputElement = <HTMLInputElement>document.getElementById('clas');
-    // if (inputElement.value === '')
-    // {
-    //     return undefined;
+     if (inputElement.value === '')
+     alert('Enter the Class')
     // }
     // else{
     return Number(inputElement.value);
@@ -46,9 +49,8 @@ function getage(age: string): number{
 }function getsub(sub: string): string{
 
     const inputElement: HTMLInputElement = <HTMLInputElement>document.getElementById('sub');
-    // if (inputElement.value === '')
-    // {
-    //     return undefined;
+    if (inputElement.value === '')
+        alert('Enter the Subject')
     // }
     // else{
     return inputElement.value;
