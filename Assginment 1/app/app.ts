@@ -27,37 +27,30 @@ function getname(name: string|undefined): string|undefined{
         alert('Enter the name')
          return undefined;
      }
-    // else{
+    
     return inputElement.value;
-    //}
+    
 }
 function getage(age: string): number{
 
     const inputElement: HTMLInputElement = <HTMLInputElement>document.getElementById('age');
     if (inputElement.value === '')
         alert('Enter the Age')
-    // }
-    // else{
     return Number(inputElement.value);
-    // }
+    
 }function getclass(clas: string): number{
 
      const inputElement: HTMLInputElement = <HTMLInputElement>document.getElementById('clas');
      if (inputElement.value === '')
      alert('Enter the Class')
-    // }
-    // else{
     return Number(inputElement.value);
-    // }
-}function getsub(sub: string): string{
+    }
+function getsub(sub: string): string{
 
     const inputElement: HTMLInputElement = <HTMLInputElement>document.getElementById('sub');
     if (inputElement.value === '')
         alert('Enter the Subject')
-    // }
-    // else{
     return inputElement.value;
-  //  }
 }
 function getsch(sch: string): string{
 
